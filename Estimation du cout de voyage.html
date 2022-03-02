@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://127.0.0.1:5500/tabReservation.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimation du cout de voyage</title>
+    <script src="./Estimation du cout de voyage_files/focntionJS.js.download"></script>
+    <link rel="stylesheet" href="./Estimation du cout de voyage_files/fonctionReservation.css">
+</head>
+
+<body>
+
+    <h1>Estimation du coût de voyage</h1>
+    <br><br><table border="0">
+        <tbody>
+
+            <tr>
+                <td classe="center">Nombre d'adultes</td>
+                <td><input type="number" name="adulte" id="adulte" placeholder="1 2 3" required="" min="0" max="20"></td>
+            </tr>
+            <tr>
+                <td>Nombre d'enfant</td>
+                <td><input type="number" name="enfant" id="enfant" placeholder="1 2 3" min="0" max="20"></td>
+            </tr>
+            <tr>
+                <td>Nombre de chambres</td>
+                <td><input type="number" name="chambre" id="chambre" placeholder="1 2 3" min="1" max="100"></td>
+            </tr>
+            <tr>
+                <td>Nombre de semaines</td>
+                <td>
+                    <select name="duree" id="duree">
+                        <option value="1">1 semaine</option>
+                        <option value="2">2 semaines</option>
+                        <option value="3">3 semaines</option>
+                        <option value="4">4 semaines</option>
+                        <option value="5">5 semaines</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Categorie d'Hotel</td>
+                <td>
+                    <input type="radio" name="hotel" id="etoile3" value="3" checked="">
+                    <span> 3 Etoiles </span>
+                    <br>
+                    <input type="radio" name="hotel" id="etoile4" value="4">
+                    <span> 4 Etoiles </span>
+                    <br>
+                    <input type="radio" name="hotel" id="etoile5" value="5">
+                    <span> 5 Etoiles </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Les Extras</td>
+                <td>
+                    <input type="checkbox" name="voyage1" id="LV" value="1">
+                    <span>Location de voitures</span>
+                    <br>
+                    <input type="checkbox" name="voyage2" id="PC" value="2">
+                    <span>Voyage en premiere classe</span>
+                    <br>
+                    <input type="checkbox" name="voyage3" id="TG" value="3">
+                    <span>Terrain de golf</span>
+                    <br>
+                    <input type="checkbox" name="voyage4" id="C" value="4">
+                    <span>Cuisinette</span>
+                    <br>
+                </td>
+            </tr><tr>
+                <td>Adresse Email</td>
+                <td><input type="texte" name="adresseMail" id="email" onchange="ValidateEmail()" placeholder="Adresse@">
+                </td>
+                
+            </tr>
+            
+
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="case">
+
+
+        
+            
+                <input type="button" value="Coût Total" onclick="total()" placeholder="1 2 3">
+                <input type="texte" id="CT">
+                <br>
+            
+            <br>
+        
+    </div>
+    <br>
+
+    <br>
+
+
+
+
+
+
+
+
+<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
